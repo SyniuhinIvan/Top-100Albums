@@ -13,14 +13,11 @@
         android:theme="@style/Theme._100musicAlbum"
         tools:targetApi="31" >
 
-        <!-- Регистрация MainActivity -->
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
-                <!-- Обозначаем эту активность как основную точку входа -->
                 <action android:name="android.intent.action.MAIN" />
-                <!-- Обозначаем, что она должна отображаться в лаунчере -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
