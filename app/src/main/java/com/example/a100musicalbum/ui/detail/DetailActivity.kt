@@ -12,11 +12,13 @@ import com.example.a100musicalbum.databinding.ActivityDetailBinding
 import com.example.a100musicalbum.network.model.Result
 import kotlinx.serialization.InternalSerializationApi
 
+// TODO: useless annotation
 @OptIn(InternalSerializationApi::class)
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
 
+    // TODO: remove this annotation, it crashes the app
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

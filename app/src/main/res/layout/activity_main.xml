@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- TODO: use tools:listItem and tools:itemCount to see your preview better -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewAlbums"
         android:layout_width="0dp"

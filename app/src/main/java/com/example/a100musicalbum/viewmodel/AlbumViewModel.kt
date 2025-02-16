@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.serialization.InternalSerializationApi
 
+// TODO: useless annotation
 @OptIn(InternalSerializationApi::class)
 class AlbumViewModel : ViewModel() {
     private val _albums = MutableStateFlow(FeedDtoWrapper())
@@ -31,6 +32,7 @@ class AlbumViewModel : ViewModel() {
                     _albums.value = data
                 }
             } catch (e: Exception) {
+                // TODO: better log in to the logcat
                 e.printStackTrace()
             }
         }

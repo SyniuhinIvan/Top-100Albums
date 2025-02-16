@@ -17,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- TODO: use string resources -->
     <TextView
         android:id="@+id/tvAlbumName"
         android:layout_width="0dp"

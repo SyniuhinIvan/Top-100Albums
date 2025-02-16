@@ -8,7 +8,11 @@ import com.example.a100musicalbum.databinding.ItemAlbumBinding
 import com.example.a100musicalbum.network.model.Result
 import kotlinx.serialization.InternalSerializationApi
 
+// TODO: useless annotation
 @OptIn(InternalSerializationApi::class)
+// TODO: use ListAdapter instead of RecyclerView.Adapter
+//   https://medium.com/geekculture/android-listadapter-a-better-implementation-for-the-recyclerview-1af1826a7d21
+//   https://www.thedroidsonroids.com/blog/difference-between-listview-recyclerview
 class AlbumAdapter(private val onClick: (Result) -> Unit) :
     RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
 
