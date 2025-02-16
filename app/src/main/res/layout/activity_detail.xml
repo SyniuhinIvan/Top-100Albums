@@ -33,7 +33,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivAlbumCoverLarge" />
 
-        <!-- TODO: use string resources -->
+        <!-- TODO: use string resources, but only for android:text, not for tools:text -->
         <TextView
             android:id="@+id/tvArtistName"
             android:layout_width="0dp"
@@ -78,6 +78,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvCopyright" />
 
         <!-- TODO: use different constraints, e.g. bottom to bottom and end to end (layout_constraintEnd_toEndOf) -->
+        <!-- TODO: use string resources -->
         <Button
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
