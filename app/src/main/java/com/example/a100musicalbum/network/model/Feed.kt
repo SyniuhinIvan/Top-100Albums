@@ -1,9 +1,9 @@
 package com.example.a100musicalbum.network.model
 
-import kotlinx.serialization.InternalSerializationApi
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+
 // TODO: useless annotation
-@InternalSerializationApi
 
 @Serializable
 
@@ -14,7 +14,7 @@ data class Feed(
     val icon: String,
     val id: String,
     val links: List<Link>,
-    val results: List<Result>,
+    @SerialName("results") val albums: List<Album>,
     val title: String,
     val updated: String
 )

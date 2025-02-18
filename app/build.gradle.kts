@@ -57,6 +57,9 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     implementation("androidx.recyclerview:recyclerview:1.3.0")
+    implementation("io.insert-koin:koin-android:3.5.0")
+
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

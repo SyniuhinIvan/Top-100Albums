@@ -5,20 +5,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.a100musicalbum.databinding.ItemAlbumBinding
-import com.example.a100musicalbum.network.model.Result
-import kotlinx.serialization.InternalSerializationApi
+import com.example.a100musicalbum.network.model.Album
 
 // TODO: useless annotation
-@OptIn(InternalSerializationApi::class)
 // TODO: use ListAdapter instead of RecyclerView.Adapter
 //   https://medium.com/geekculture/android-listadapter-a-better-implementation-for-the-recyclerview-1af1826a7d21
 //   https://www.thedroidsonroids.com/blog/difference-between-listview-recyclerview
-class AlbumAdapter(private val onClick: (Result) -> Unit) :
+class AlbumAdapter(private val onClick: (Album) -> Unit) :
     RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
 
-    private val albums = mutableListOf<Result>()
+    private val albums = mutableListOf<Album>()
 
-    fun submitList(newList: List<Result>) {
+    fun submitList(newList: List<Album>) {
         albums.clear()
         albums.addAll(newList)
         notifyDataSetChanged()
@@ -26,7 +24,7 @@ class AlbumAdapter(private val onClick: (Result) -> Unit) :
 
     inner class AlbumViewHolder(private val binding: ItemAlbumBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(album: Result) {
+        fun bind(album: Album) {
             binding.tvAlbumName.text = album.name
             binding.ivAlbumCover.load(album.artworkUrl100)
             binding.root.setOnClickListener { onClick(album) }

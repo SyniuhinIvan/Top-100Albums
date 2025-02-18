@@ -9,7 +9,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import com.example.a100musicalbum.databinding.ActivityDetailBinding
-import com.example.a100musicalbum.network.model.Result
+import com.example.a100musicalbum.network.model.Album
 import kotlinx.serialization.InternalSerializationApi
 
 // TODO: useless annotation
@@ -25,12 +25,12 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val album = intent.getParcelableExtra("album", Result::class.java)
+        val album = intent.getParcelableExtra("album", Album::class.java)
         if (album != null) {
             binding.tvAlbumName.text = album.name
             binding.tvArtistName.text = album.artistName
             binding.tvReleaseDate.text = album.releaseDate
-            //binding.tvCopyright.text = album.copyright
+            binding.tvCopyright.text = "© Copyright"
 
             binding.ivAlbumCoverLarge.load(album.artworkUrl100.replace("100x100", "600x600"))
 
@@ -46,7 +46,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun newIntent(context: Context, album: Result): Intent {
+        fun newIntent(context: Context, album: Album): Intent {
             return Intent(context, DetailActivity::class.java).apply {
                 putExtra("album", album)
             }

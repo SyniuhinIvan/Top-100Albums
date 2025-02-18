@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">100musicAlbum</string>
     <string name="album_cover">Album Cover</string>
+    <string name="album_name">Album Name</string>
+    <string name="Open_in_iTunes_Store">Open in iTunes Store</string>
+    <string name="Back">Back</string>
 
 </resources>

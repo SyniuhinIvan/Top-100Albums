@@ -10,10 +10,8 @@ import io.ktor.client.statement.HttpResponse
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import kotlinx.serialization.InternalSerializationApi
 
 // TODO: useless annotation
-@OptIn(InternalSerializationApi::class)
 class AlbumViewModel : ViewModel() {
     private val _albums = MutableStateFlow(FeedDtoWrapper())
     val albums = _albums.asStateFlow()
