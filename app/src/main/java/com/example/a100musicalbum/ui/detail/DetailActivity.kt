@@ -12,27 +12,28 @@ import com.example.a100musicalbum.databinding.ActivityDetailBinding
 import com.example.a100musicalbum.network.model.Album
 import kotlinx.serialization.InternalSerializationApi
 
-// TODO: useless annotation
-@OptIn(InternalSerializationApi::class)
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
 
-    // TODO: remove this annotation, it crashes the app
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val album = intent.getParcelableExtra("album", Album::class.java)
+        @Suppress("DEPRECATION")
+        val album: Album? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra("album", Album::class.java)
+        } else {
+            intent.getParcelableExtra("album")
+        }
         if (album != null) {
             binding.tvAlbumName.text = album.name
             binding.tvArtistName.text = album.artistName
             binding.tvReleaseDate.text = album.releaseDate
             binding.tvCopyright.text = "© Copyright"
 
-            binding.ivAlbumCoverLarge.load(album.artworkUrl100.replace("100x100", "600x600"))
+            binding.ivAlbumCoverLarge.load(album.artworkUrl100.replace("100x100", "1080x1920"))
 
             binding.btnOpenInStore.setOnClickListener {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(album.url))

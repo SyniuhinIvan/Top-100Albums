@@ -10,20 +10,21 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="16dp">
-        <!-- TODO: use tools:srcCompat to see your preview better -->
         <ImageView
             android:id="@+id/ivAlbumCoverLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat = "@tools:sample/avatars"/>
 
-        <!-- TODO: don't use android:text for preview, use tools:text. otherwise you will see this hardcoded text for a while (your screen in quick for now, but in future you will have more complicated screens) -->
         <TextView
             android:id="@+id/tvAlbumName"
             android:layout_width="0dp"
@@ -36,7 +37,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivAlbumCoverLarge" />
 
-        <!-- TODO: use string resources, but only for android:text, not for tools:text -->
         <TextView
             android:id="@+id/tvArtistName"
             android:layout_width="0dp"
@@ -80,7 +80,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCopyright" />
 
-        <!-- TODO: use different constraints, e.g. bottom to bottom and end to end (layout_constraintEnd_toEndOf) -->
         <Button
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"

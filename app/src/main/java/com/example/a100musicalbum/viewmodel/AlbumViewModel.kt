@@ -1,5 +1,6 @@
 package com.example.a100musicalbum.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.a100musicalbum.network.KtorClient
@@ -11,7 +12,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-// TODO: useless annotation
 class AlbumViewModel : ViewModel() {
     private val _albums = MutableStateFlow(FeedDtoWrapper())
     val albums = _albums.asStateFlow()
@@ -30,8 +30,7 @@ class AlbumViewModel : ViewModel() {
                     _albums.value = data
                 }
             } catch (e: Exception) {
-                // TODO: better log in to the logcat
-                e.printStackTrace()
+                Log.e("fetchAlbums","Err in response from JSON")
             }
         }
     }

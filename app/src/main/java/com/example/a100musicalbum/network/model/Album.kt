@@ -4,7 +4,6 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable
 
-// TODO: useless annotation
 
 @Parcelize
 @Serializable
