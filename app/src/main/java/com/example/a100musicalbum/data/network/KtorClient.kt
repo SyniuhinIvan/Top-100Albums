@@ -1,4 +1,4 @@
-package com.example.a100musicalbum.network
+package com.example.a100musicalbum.data.network
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO

@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.a100musicalbum.databinding.ItemAlbumBinding
-import com.example.a100musicalbum.network.model.Album
+import com.example.a100musicalbum.data.model.Album
 
 //   https://medium.com/geekculture/android-listadapter-a-better-implementation-for-the-recyclerview-1af1826a7d21
 //   https://www.thedroidsonroids.com/blog/difference-between-listview-recyclerview
-class AlbumAdapter(private val onClick: (Album) -> Unit) :
-    ListAdapter<Album, AlbumAdapter.AlbumViewHolder>(AlbumDiffCallback()) {
+class MainAdapter(private val onClick: (Album) -> Unit) :
+    ListAdapter<Album, MainAdapter.AlbumViewHolder>(AlbumDiffCallback()) {
 
     inner class AlbumViewHolder(private val binding: ItemAlbumBinding) :
         RecyclerView.ViewHolder(binding.root) {

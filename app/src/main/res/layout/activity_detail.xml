@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- TODO: play with screen sizes in UI preview - you will see that your screen is not flexible enough -->
 <!-- https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DrzmB3UxxhaA&ved=2ahUKEwigitrdn8iLAxXoUlUIHc8DCtcQwqsBegQIDRAG&usg=AOvVaw2Na2sa53fGi3BxfEWufwDd -->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -12,18 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
+
         <ImageView
             android:id="@+id/ivAlbumCoverLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintWidth_default="percent"
-            app:layout_constraintWidth_percent="0.5"
-            app:layout_constraintHeight_default="percent"
-            app:layout_constraintHeight_percent="0.5"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat = "@tools:sample/avatars"/>
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.8"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/tvAlbumName"

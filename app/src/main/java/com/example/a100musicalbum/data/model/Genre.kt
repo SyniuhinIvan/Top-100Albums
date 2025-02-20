@@ -1,4 +1,4 @@
-package com.example.a100musicalbum.network.model
+package com.example.a100musicalbum.data.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

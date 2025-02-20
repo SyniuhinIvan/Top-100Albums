@@ -9,7 +9,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import com.example.a100musicalbum.databinding.ActivityDetailBinding
-import com.example.a100musicalbum.network.model.Album
+import com.example.a100musicalbum.data.model.Album
 import kotlinx.serialization.InternalSerializationApi
 
 class DetailActivity : AppCompatActivity() {

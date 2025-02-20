@@ -1,4 +1,4 @@
-package com.example.a100musicalbum.network.model
+package com.example.a100musicalbum.data.model
 
 import kotlinx.serialization.Serializable
 
