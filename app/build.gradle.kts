@@ -1,8 +1,11 @@
+import org.jetbrains.kotlin.gradle.internal.Kapt3GradleSubplugin.Companion.isKaptVerbose
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
     id("kotlin-parcelize")
+    id("kotlin-kapt")
 }
 
 android {
@@ -58,6 +61,10 @@ dependencies {
 
     implementation("androidx.recyclerview:recyclerview:1.3.0")
     implementation("io.insert-koin:koin-android:3.5.0")
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+
 
 
 
