@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit
 class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
+        /* TODO: тимбер */
         startKoin {
             androidContext(this@MyApp)
             modules(listOf(appModule))

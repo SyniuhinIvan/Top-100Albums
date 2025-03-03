@@ -11,7 +11,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     // TODO: https://developer.android.com/topic/libraries/view-binding
-
+    /* TODO: либо либу юзай либо наллабл var с занулением в onDestroy */
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
@@ -22,14 +22,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
+    /* TODO: лучше переназвать в просто viewModel */
     private val myViewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        //  https://developer.android.com/topic/libraries/architecture/viewmodel
-
         binding.recyclerViewAlbums.adapter = mainAdapter
 
         lifecycleScope.launch {

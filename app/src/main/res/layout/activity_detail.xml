@@ -38,7 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivAlbumCoverLarge" />
-
+        <!-- заюзай автоформатирование кода через хоткей, оно отсортирует все параметры у списка, когда привыкаешь то удобнее смотреть их по порядку -->
         <TextView
             android:id="@+id/tvArtistName"
             android:layout_width="0dp"

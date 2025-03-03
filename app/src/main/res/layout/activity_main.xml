@@ -21,3 +21,5 @@
         tools:listitem="@layout/item_album" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- а вообще молодец, много сделал и хорошо при этом :) -->

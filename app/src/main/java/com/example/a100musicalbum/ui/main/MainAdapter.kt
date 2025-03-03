@@ -31,6 +31,8 @@ class MainAdapter(private val onClick: (Album) -> Unit) :
     override fun onBindViewHolder(holder: AlbumViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
+
+    /* TODO: лучше перенести как val diffCallback = object : DiffUtil... в companion object AlbumUI модели */
     class AlbumDiffCallback : DiffUtil.ItemCallback<Album>(){
         override fun areItemsTheSame(oldItem: Album, newItem: Album): Boolean {
             return oldItem.id == newItem.id

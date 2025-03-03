@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+// TODO: более понятное название для useCase придумай
 class MainViewModel(private val useCase: UseCase) : ViewModel() {
     private val _albums = MutableStateFlow<List<Album>>(emptyList())
     val albums: StateFlow<List<Album>> get() = _albums
@@ -21,8 +22,11 @@ class MainViewModel(private val useCase: UseCase) : ViewModel() {
                 val albumList = useCase()
                 _albums.value = albumList
             } catch (e: Exception) {
+                // TODO: ошибку надо либо показать пользователю если она есть. можно тостом или снекбаром. также лучше залогировать её Timber.e
                 e.printStackTrace()
             }
         }
     }
 }
+
+// TODO: заюзай автоформатирование текста через хоткей тут
