@@ -4,31 +4,31 @@ import android.content.Context
 import com.example.a100musicalbum.data.local.AlbumDao
 import com.example.a100musicalbum.data.local.AlbumEntity
 import com.example.a100musicalbum.data.local.AlbumDb
-import com.example.a100musicalbum.data.model.Album
-import com.example.a100musicalbum.data.model.FeedDtoWrapper
-import com.example.a100musicalbum.data.network.KtorClient
+import com.example.a100musicalbum.data.network.*
+import com.example.a100musicalbum.data.network.dto.AlbumDto
+import com.example.a100musicalbum.data.network.dto.FeedDtoWrapper
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.statement.HttpResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-/* TODO: придумай более понятное название */
-class Repository (private val albumDao: AlbumDao){
+class AlbumRepository (private val albumDao: AlbumDao){
 
-    companion object {
-        /* TODO: создание синглтона - в коин */
-        @Volatile private var INSTANCE: Repository? = null
+    /*companion object {
+        *//* TODO: создание синглтона - в коин *//*
+        @Volatile
+        private var INSTANCE: AlbumRepository? = null
 
-        fun getInstance(context: Context): Repository {
+        fun getInstance(context: Context): AlbumRepository {
             return INSTANCE ?: synchronized(this) {
                 val database = AlbumDb.getDatabase(context)
-                Repository(database.albumDao()).also { INSTANCE = it }
+                AlbumRepository(database.albumDao()).also { INSTANCE = it }
             }
         }
-    }
+    }*/
 
-    suspend fun fetchAlbums(): List<Album> = withContext(Dispatchers.IO) {
+    suspend fun fetchAlbums(): List<AlbumDto> = withContext(Dispatchers.IO) {
         try {
 
             //
@@ -56,7 +56,7 @@ class Repository (private val albumDao: AlbumDao){
         } catch (e: Exception) {
             val cachedEntities = albumDao.getAllAlbums()
             cachedEntities.map { entity ->
-                Album(
+                AlbumDto(
                     id = entity.id,
                     name = entity.name,
                     artistName = entity.artistName,

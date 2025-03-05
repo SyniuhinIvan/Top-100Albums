@@ -5,12 +5,10 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import com.example.a100musicalbum.databinding.ActivityDetailBinding
-import com.example.a100musicalbum.data.model.Album
-import kotlinx.serialization.InternalSerializationApi
+import com.example.a100musicalbum.data.network.dto.AlbumDto
 
 class DetailActivity : AppCompatActivity() {
 
@@ -22,8 +20,8 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         @Suppress("DEPRECATION")
-        val album: Album? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("album", Album::class.java)
+        val album: AlbumDto? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra("album", AlbumDto::class.java)
         } else {
             intent.getParcelableExtra("album")
         }
@@ -47,7 +45,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun newIntent(context: Context, album: Album): Intent {
+        fun newIntent(context: Context, album: AlbumDto): Intent {
             return Intent(context, DetailActivity::class.java).apply {
                 putExtra("album", album)
             }

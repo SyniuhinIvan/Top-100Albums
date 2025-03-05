@@ -22,8 +22,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    /* TODO: лучше переназвать в просто viewModel */
-    private val myViewModel: MainViewModel by viewModel()
+    private val viewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerViewAlbums.adapter = mainAdapter
 
         lifecycleScope.launch {
-            myViewModel.albums.collect { albumList ->
+            viewModel.albums.collect { albumList ->
                mainAdapter.submitList(albumList) }
             }
         }

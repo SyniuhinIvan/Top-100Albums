@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- TODO: play with screen sizes in UI preview - you will see that your screen is not flexible enough -->
+<?xml version="1.0" encoding="utf-8"?><!-- play with screen sizes in UI preview - you will see that your screen is not flexible enough -->
 <!-- https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DrzmB3UxxhaA&ved=2ahUKEwigitrdn8iLAxXoUlUIHc8DCtcQwqsBegQIDRAG&usg=AOvVaw2Na2sa53fGi3BxfEWufwDd -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -32,45 +31,45 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            tools:text="Album Name"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivAlbumCoverLarge" />
-        <!-- заюзай автоформатирование кода через хоткей, оно отсортирует все параметры у списка, когда привыкаешь то удобнее смотреть их по порядку -->
+            app:layout_constraintTop_toBottomOf="@id/ivAlbumCoverLarge"
+            tools:text="Album Name" />
+
         <TextView
             android:id="@+id/tvArtistName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            tools:text="Artist Name"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvAlbumName" />
+            app:layout_constraintTop_toBottomOf="@id/tvAlbumName"
+            tools:text="Artist Name" />
 
         <TextView
             android:id="@+id/tvReleaseDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            tools:text="Release Date"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvArtistName" />
+            app:layout_constraintTop_toBottomOf="@id/tvArtistName"
+            tools:text="Release Date" />
 
         <TextView
             android:id="@+id/tvCopyright"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            tools:text="© Copyright"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvReleaseDate" />
+            app:layout_constraintTop_toBottomOf="@id/tvReleaseDate"
+            tools:text="© Copyright" />
 
         <Button
             android:id="@+id/btnOpenInStore"
@@ -87,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Back"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
