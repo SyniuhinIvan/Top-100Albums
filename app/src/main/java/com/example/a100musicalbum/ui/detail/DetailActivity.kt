@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import com.example.a100musicalbum.databinding.ActivityDetailBinding
 import com.example.a100musicalbum.data.network.dto.AlbumDto
+import com.example.a100musicalbum.ui.component.AlbumUI
 
 class DetailActivity : AppCompatActivity() {
 
@@ -45,7 +46,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun newIntent(context: Context, album: AlbumDto): Intent {
+        fun newIntent(context: Context, album: AlbumUI): Intent {
             return Intent(context, DetailActivity::class.java).apply {
                 putExtra("album", album)
             }

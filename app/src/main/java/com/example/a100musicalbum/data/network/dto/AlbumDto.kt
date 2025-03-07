@@ -21,9 +21,8 @@ data class AlbumDto(
 ) : Parcelable
 
 @Serializable
-data class Author(
-    val name: String,
-    val url: String
+data class FeedDtoWrapper(
+    val feed: Feed? = null
 )
 
 @Serializable
@@ -40,8 +39,9 @@ data class Feed(
 )
 
 @Serializable
-data class FeedDtoWrapper(
-    val feed: Feed? = null
+data class Author(
+    val name: String,
+    val url: String
 )
 
 @Parcelize

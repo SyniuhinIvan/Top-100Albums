@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity() {
-    // TODO: https://developer.android.com/topic/libraries/view-binding
+    // https://developer.android.com/topic/libraries/view-binding
     /* TODO: либо либу юзай либо наллабл var с занулением в onDestroy */
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             viewModel.albums.collect { albumList ->
-               mainAdapter.submitList(albumList) }
+                mainAdapter.submitList(albumList)
             }
         }
     }
+}
